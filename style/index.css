@@ -25,6 +25,89 @@ body {
   bottom: 0;
 }
 
-.video-container video .fillWidth {
+.video-container .fillWidth:hover {
+  cursor: pointer;
+}
+
+.video-container video .fillWidth, .video-container video .fillWidth2 {
   width: 100%;
+}
+
+.game-infos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #EEE;
+  font-size: 20px;
+  font-family: sans-serif;
+  margin-left: 80px;
+  margin-top: 35px;
+}
+
+.game-infos .line {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.game-infos .buttons {
+  margin-top: 60px;
+}
+
+.game-infos .text-info {
+  display: inline;
+  margin-left: 25px;
+  font-size: 17px;
+}
+
+.game-infos .text-infoo {
+  display: inline;
+  margin-left: 25px;
+  font-size: 17px;
+  vertical-align: top;
+  line-height: 40px;
+}
+
+.game-infos .button-preview {
+  display: inline;
+  border: 1px solid #EEE;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 17px;
+  padding-right: 17px;
+}
+
+.game-infos .icon {
+  width: 45px;
+  height: 36px;
+}
+
+.game-infos .button-start {
+  border: 1px solid #EEE;
+  width: 130px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 50px;
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+  -webkit-filter: blur(0);
+  -moz-filter: blur(0);
+  -o-filter: blur(0);
+  -ms-filter: blur(0);
+  -ms-filter: blur(0px);
+}
+
+.game-infos .button-start:hover {
+  cursor: pointer;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
 }

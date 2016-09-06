@@ -1,7 +1,7 @@
 .sk-folding-cube {
   margin: 20px auto;
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   position: relative;
   -webkit-transform: rotateZ(45deg);
           transform: rotateZ(45deg);
@@ -13,9 +13,9 @@
   width: 50%;
   height: 50%;
   position: relative;
-  -webkit-transform: scale(1.03);
-      -ms-transform: scale(1.03);
-          transform: scale(1.03);
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 .sk-folding-cube .sk-cube:before {
   content: '';
@@ -32,16 +32,16 @@
           transform-origin: 100% 100%;
 }
 .sk-folding-cube .sk-cube2 {
-  -webkit-transform: scale(1.03) rotateZ(90deg);
-          transform: scale(1.03) rotateZ(90deg);
+  -webkit-transform: scale(1.1) rotateZ(90deg);
+          transform: scale(1.1) rotateZ(90deg);
 }
 .sk-folding-cube .sk-cube3 {
-  -webkit-transform: scale(1.03) rotateZ(180deg);
-          transform: scale(1.03) rotateZ(180deg);
+  -webkit-transform: scale(1.1) rotateZ(180deg);
+          transform: scale(1.1) rotateZ(180deg);
 }
 .sk-folding-cube .sk-cube4 {
-  -webkit-transform: scale(1.03) rotateZ(270deg);
-          transform: scale(1.03) rotateZ(270deg);
+  -webkit-transform: scale(1.1) rotateZ(270deg);
+          transform: scale(1.1) rotateZ(270deg);
 }
 .sk-folding-cube .sk-cube2:before {
   -webkit-animation-delay: 0.3s;
