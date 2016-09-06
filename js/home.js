@@ -52,8 +52,8 @@ function scaleVideoContainer(width, height) {
 }
 
 function initBannerVideoSize(element) {
-  element.dataset.height = element.videoHeight;
-  element.dataset.width = element.videoWidth;
+  element.dataset.height = 450;
+  element.dataset.width = 1500;
 
   scaleBannerVideoSize(element);
 }
