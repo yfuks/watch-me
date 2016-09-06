@@ -3,7 +3,24 @@ var videoAcceuil = document.getElementsByClassName("fillWidth")[0];
 var videoIntro = document.getElementsByClassName("fillWidth2")[0];
 var divHeroModule = document.getElementsByClassName("homepage-hero-module")[0];
 
-window.onload = function() {
+var canPlayAcceuil = false;
+var canPlayIntro = false;
+
+videoAcceuil.oncanplaythrough = function (e) {
+  if (canPlayIntro == true) {
+    start();
+  }
+  canPlayAcceuil = true;
+}
+
+videoIntro.oncanplaythrough = function (e) {
+  if (canPlayAcceuil == true) {
+    start();
+  }
+  canPlayIntro = true;
+}
+
+function start() {
   fade(spinner);
 
   var w = window,
@@ -29,7 +46,7 @@ window.onload = function() {
      scaleBannerVideoSize(videoAcceuil);
      scaleBannerVideoSize2(videoIntro);
   };
-};
+}
 
 function fade(element) {
     var op = 1;  // initial opacity
