@@ -4,6 +4,7 @@ var gameInfos = document.getElementsByClassName("game-infos")[0];
 var buttonReloadIntro = document.getElementsByClassName("button-reload")[0];
 var buttonStart = document.getElementsByClassName("button-start")[0];
 var spinner = document.getElementsByClassName("sk-folding-cube")[0];
+var divHeroModule = document.getElementsByClassName("homepage-hero-module")[0];
 
 var vidEnded = false;
 
@@ -24,6 +25,10 @@ buttonReloadIntro.onclick = function (e) {
 buttonStart.onclick = function (e) {
   videoIntro.style.display = "none";
   gameInfos.style.display = "none";
+  divHeroModule.style.display = "none";
+  spinner.style.display = "block";
+  spinner.style.opacity = 1;
+  spinner.style.filter = 'alpha(opacity=' + 100 + ")";
 }
 
 function playIntro() {

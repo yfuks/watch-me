@@ -54,9 +54,15 @@ function fade(element) {
     var timer = setInterval(function () {
         if (op <= 0.1){
             clearInterval(timer);
+            timer = null;
             element.style.display = 'none';
-            videoAcceuil.style.display = "block";
-            divHeroModule.style.display = "block";
+
+            // work around safari (force redraw)
+            divHeroModule.style.display = 'block';
+            divHeroModule.offsetHeight;
+            divHeroModule.style.display = '';
+
+            videoAcceuil.style.display = 'block';
             videoAcceuil.play();
         }
         element.style.opacity = op;
