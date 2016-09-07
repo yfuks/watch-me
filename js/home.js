@@ -1,4 +1,4 @@
-var spinner = document.getElementsByClassName("sk-folding-cube")[0];
+var spinner = document.getElementsByClassName("spinner")[0];
 var videoAcceuil = document.getElementsByClassName("fillWidth")[0];
 var videoIntro = document.getElementsByClassName("fillWidth2")[0];
 var divHeroModule = document.getElementsByClassName("homepage-hero-module")[0];

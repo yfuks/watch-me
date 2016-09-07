@@ -3,7 +3,7 @@ var videoIntro = document.getElementsByClassName("fillWidth2")[0];
 var gameInfos = document.getElementsByClassName("game-infos")[0];
 var buttonReloadIntro = document.getElementsByClassName("button-reload")[0];
 var buttonStart = document.getElementsByClassName("button-start")[0];
-var spinner = document.getElementsByClassName("sk-folding-cube")[0];
+var spinner = document.getElementsByClassName("spinner")[0];
 var divHeroModule = document.getElementsByClassName("homepage-hero-module")[0];
 
 var vidEnded = false;
