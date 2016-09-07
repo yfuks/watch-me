@@ -6,6 +6,7 @@ var divHeroModule = document.getElementsByClassName("homepage-hero-module")[0];
 var canPlayAcceuil = false;
 var canPlayIntro = false;
 
+
 videoAcceuil.oncanplaythrough = function (e) {
   if (canPlayIntro == true) {
     start();
@@ -20,33 +21,33 @@ videoIntro.oncanplaythrough = function (e) {
   canPlayIntro = true;
 }
 
+/*
+ *    Start the app
+ */
+
 function start() {
   fade(spinner);
 
-  var w = window,
-      d = document,
-      e = d.documentElement,
-      g = d.getElementsByTagName('body')[0],
-      x = w.innerWidth || e.clientWidth || g.clientWidth,
-      y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+  var x = getWindowWidth(),
+      y = getWindowHeight();
 
-  // Resive video
+  // Resize video
   scaleVideoContainer(x, y);
-  initBannerVideoSize(videoAcceuil);
-  initBannerVideoSize2(videoIntro);
+  initBannerVideoSize(videoAcceuil, 450, 1500, true);
+  initBannerVideoSize(videoIntro, 1080, 1920, false);
 
   window.onresize = function(event) {
-    var w = window,
-        d = document,
-        e = d.documentElement,
-        g = d.getElementsByTagName('body')[0],
-        x = w.innerWidth || e.clientWidth || g.clientWidth,
-        y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+    var x = getWindowWidth(),
+        y = getWindowHeight();
      scaleVideoContainer(x, y);
-     scaleBannerVideoSize(videoAcceuil);
-     scaleBannerVideoSize2(videoIntro);
+     scaleBannerVideoSize(videoAcceuil, true);
+     scaleBannerVideoSize(videoIntro, false);
   };
 }
+
+/*
+ *    Hide the spinner then diplay the Accueil video and play it
+ */
 
 function fade(element) {
     var op = 1;  // initial opacity
@@ -64,46 +65,40 @@ function fade(element) {
     }, 70);
 }
 
-function scaleVideoContainer(width, height) {
-    var unitWidth = parseInt(width) + 'px';
-    var unitHeight = parseInt(height) + 'px';
-    divHeroModule.style.width = unitWidth;
-    divHeroModule.style.height = unitHeight;
-}
-
 /*
- *  Video Acceuil
+ *  Video
  */
 
-function initBannerVideoSize(element) {
-  element.dataset.height = 1080;
-  element.dataset.width = 1920;
+ function scaleVideoContainer(width, height) {
+     var unitWidth = parseInt(width) + 'px';
+     var unitHeight = parseInt(height) + 'px';
+     divHeroModule.style.width = unitWidth;
+     divHeroModule.style.height = unitHeight;
+ }
 
-  scaleBannerVideoSize(element);
+function initBannerVideoSize(element, height, width, marginSide) {
+  element.dataset.height = height;
+  element.dataset.width = width;
+
+  scaleBannerVideoSize(element, marginSide);
 }
 
-function scaleBannerVideoSize(element){
+function scaleBannerVideoSize(element, isMarginSide){
   var marginSide = 50;
-  var w = window,
-      d = document,
-      e = d.documentElement,
-      g = d.getElementsByTagName('body')[0],
-      windowWidth = w.innerWidth || e.clientWidth || g.clientWidth,
-      windowHeight = w.innerHeight|| e.clientHeight|| g.clientHeight,
+  var windowWidth = getWindowWidth(),
+      windowHeight = getWindowHeight(),
       videoWidth,
       videoHeight;
 
     var videoAspectRatio = element.dataset.height / element.dataset.width,
         windowAspectRatio = windowHeight / windowWidth;
 
-    /*
-    console.log('windowWidth', windowWidth);
-    console.log('windowHeight', windowHeight);
-    console.log('windowAspectRatio', windowAspectRatio);
-    console.log('videoAspectRatio', videoAspectRatio);
-    */
+    if (isMarginSide) {
+      videoWidth = (windowWidth - (marginSide * 2)) > 800 ? 800 : (windowWidth - (marginSide * 2));
+    } else {
+      videoWidth = (windowWidth);
+    }
 
-    videoWidth = (windowWidth - (marginSide * 2)) > 800 ? 800 : (windowWidth - (marginSide * 2));
     videoHeight = videoWidth * videoAspectRatio;
     element.style.top = (windowHeight - videoHeight) / 2 + 'px';
     element.style.marginLeft = (windowWidth / 2) - (videoWidth / 2) + 'px';
@@ -112,40 +107,23 @@ function scaleBannerVideoSize(element){
 }
 
 /*
- *  Video intro
+ *    Window tools
  */
 
- function initBannerVideoSize2(element) {
-   element.dataset.height = element.videoHeight;
-   element.dataset.width = element.videoWidth;
+function getWindowWidth() {
+  var w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.getElementsByTagName('body')[0],
+      windowWidth = w.innerWidth || e.clientWidth || g.clientWidth;
+  return (windowWidth);
+}
 
-   scaleBannerVideoSize2(element);
- }
-
- function scaleBannerVideoSize2(element){
-   var w = window,
-       d = document,
-       e = d.documentElement,
-       g = d.getElementsByTagName('body')[0],
-       windowWidth = w.innerWidth || e.clientWidth || g.clientWidth,
-       windowHeight = w.innerHeight|| e.clientHeight|| g.clientHeight,
-       videoWidth,
-       videoHeight;
-
-     var videoAspectRatio = element.dataset.height / element.dataset.width,
-         windowAspectRatio = windowHeight / windowWidth;
-
-     /*
-     console.log('windowWidth', windowWidth);
-     console.log('windowHeight', windowHeight);
-     console.log('windowAspectRatio', windowAspectRatio);
-     console.log('videoAspectRatio', videoAspectRatio);
-     */
-
-     videoWidth = (windowWidth);
-     videoHeight = videoWidth * videoAspectRatio;
-     element.style.top = (windowHeight - videoHeight) / 2 + 'px';
-     element.style.marginLeft = (windowWidth / 2) - (videoWidth / 2) + 'px';
-     element.width = videoWidth;
-     element.height = videoHeight;
- }
+function getWindowHeight() {
+  var w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.getElementsByTagName('body')[0],
+      windowHeight = w.innerHeight|| e.clientHeight|| g.clientHeight;
+  return (windowHeight);
+}
