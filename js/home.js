@@ -5,18 +5,20 @@ var divHeroModule = document.getElementsByClassName("homepage-hero-module")[0];
 
 var canPlayAcceuil = false;
 var canPlayIntro = false;
-
+var loadingEnd = false;
 
 videoAcceuil.oncanplaythrough = function (e) {
-  if (canPlayIntro == true) {
+  if (canPlayIntro == true && !loadingEnd) {
     start();
+	loadingEnd = true;
   }
   canPlayAcceuil = true;
 }
 
 videoIntro.oncanplaythrough = function (e) {
-  if (canPlayAcceuil == true) {
+  if (canPlayAcceuil == true && !loadingEnd) {
     start();
+	loadingEnd = true;
   }
   canPlayIntro = true;
 }

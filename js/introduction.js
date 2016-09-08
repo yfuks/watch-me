@@ -24,10 +24,10 @@ buttonReloadIntro.onclick = function (e) {
 }
 
 buttonSkip.onclick = function (e) {
-	videoAcceuil.style.display = "none";
 	buttonSkip.style.display = "none";
     gameInfos.style.display = "block";
     videoIntro.style.display = "none";
+	videoIntro.pause();
 	vidEnded = true;
 }
 
