@@ -78,12 +78,19 @@ body {
   padding-right: 17px;
 }
 
+.button-skip {
+	color: #EEE;
+	position: absolute;
+	top: 20px;
+	right: 100px;
+}
+
 .game-infos .icon {
   width: 45px;
   height: 36px;
 }
 
-.game-infos .button-start, .game-infos .button-reload{
+.game-infos .button-start, .game-infos .button-reload, .button-skip{
   border: 1px solid #EEE;
   width: 130px;
   height: 40px;
@@ -103,7 +110,7 @@ body {
   -ms-filter: blur(0px);
 }
 
-.game-infos .button-start:hover,  .game-infos .button-reload:hover{
+.game-infos .button-start:hover,  .game-infos .button-reload:hover, .button-skip:hover{
   cursor: pointer;
   filter: blur(5px);
   -webkit-filter: blur(5px);

@@ -3,6 +3,7 @@ var videoIntro = document.getElementsByClassName("fillWidth2")[0];
 var gameInfos = document.getElementsByClassName("game-infos")[0];
 var buttonReloadIntro = document.getElementsByClassName("button-reload")[0];
 var buttonStart = document.getElementsByClassName("button-start")[0];
+var buttonSkip = document.getElementsByClassName("button-skip")[0];
 var spinner = document.getElementsByClassName("spinner")[0];
 var divHeroModule = document.getElementsByClassName("homepage-hero-module")[0];
 
@@ -22,6 +23,14 @@ buttonReloadIntro.onclick = function (e) {
   playIntro();
 }
 
+buttonSkip.onclick = function (e) {
+	videoAcceuil.style.display = "none";
+	buttonSkip.style.display = "none";
+    gameInfos.style.display = "block";
+    videoIntro.style.display = "none";
+	vidEnded = true;
+}
+
 buttonStart.onclick = function (e) {
   videoIntro.style.display = "none";
   gameInfos.style.display = "none";
@@ -33,16 +42,20 @@ buttonStart.onclick = function (e) {
 
 function playIntro() {
   videoIntro.style.display = "block";
+  videoIntro.currentTime = 0;
   videoIntro.play();
   gameInfos.style.display = "none";
+  buttonSkip.style.display = "block";
 
   // print game infos at the end of the videoIntro
   var timer = setInterval(function () {
     var time = videoIntro.currentTime;
       if (vidEnded) {
           clearInterval(timer);
+		  buttonSkip.style.display = "none";
           gameInfos.style.display = "block";
+		  videoIntro.style.display = "none";
           vidEnded = false; // put to false for reload purpose
       }
-  }, 700);
+  }, 500);
 }
