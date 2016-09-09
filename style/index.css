@@ -118,3 +118,16 @@ body {
   -o-filter: blur(5px);
   -ms-filter: blur(5px);
 }
+
+.game {
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 150px;
+}
+
+.icons {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
