@@ -14,12 +14,32 @@ function startGame() {
   video.load();
 
   video.oncanplaythrough = function (event) {
-    spinner.style.display = "none";
-    video.style.display = "block";
-    videoContainer.style.display = "block";
-    video.play();
+    fadeSpinner(spinner);
   }
 }
+
+function fadeSpinner(element) {
+    var op = 1;  // initial opacity
+    var timer = setInterval(function () {
+        if (op <= 0.1){
+            clearInterval(timer);
+            timer = null;
+            element.style.display = 'none';
+
+            // work around safari (force redraw)
+            videoContainer.style.display = 'block';
+            videoContainer.offsetHeight;
+            videoContainer.style.display = '';
+
+            video.style.display = "block";
+            video.play();
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op -= op * 0.1;
+    }, 70);
+}
+
 
 function selectIcon(srcElement) {
   var index = srcElement.getAttribute('data-index');
