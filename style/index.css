@@ -121,13 +121,19 @@ body {
 
 .game {
 	position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 150px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 150px;
 }
 
 .icons {
-	margin-top: 5px;
-	margin-bottom: 5px;
+	margin-top: 40px;
+}
+
+.icons-list {
+  text-align: center;
+  opacity: 0.8;
+  overflow-y: auto;
+  height: 100%;
 }

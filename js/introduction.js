@@ -6,6 +6,7 @@ var buttonStart = document.getElementsByClassName("button-start")[0];
 var buttonSkip = document.getElementsByClassName("button-skip")[0];
 var spinner = document.getElementsByClassName("spinner")[0];
 var divHeroModule = document.getElementsByClassName("homepage-hero-module")[0];
+var game = document.getElementsByClassName("game")[0];
 
 var vidEnded = false;
 
@@ -38,6 +39,7 @@ buttonStart.onclick = function (e) {
   spinner.style.display = "block";
   spinner.style.opacity = 1;
   spinner.style.filter = 'alpha(opacity=' + 100 + ")";
+  game.style.display = "block";
 }
 
 function playIntro() {
