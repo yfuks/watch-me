@@ -40,6 +40,7 @@ buttonStart.onclick = function (e) {
   spinner.style.opacity = 1;
   spinner.style.filter = 'alpha(opacity=' + 100 + ")";
   game.style.display = "block";
+  startGame();
 }
 
 function playIntro() {

@@ -1,7 +1,9 @@
 var spinner = document.getElementsByClassName("spinner")[0];
 var videoAcceuil = document.getElementsByClassName("fillWidth")[0];
 var videoIntro = document.getElementsByClassName("fillWidth2")[0];
+var videoGame = document.getElementsByClassName("fillWidth3")[0];
 var divHeroModule = document.getElementsByClassName("homepage-hero-module")[0];
+var videoContainer = document.getElementsByClassName("video-container2")[0];
 
 var canPlayAcceuil = false;
 var canPlayIntro = false;
@@ -37,6 +39,7 @@ function start() {
   scaleVideoContainer(x, y);
   initBannerVideoSize(videoAcceuil, 450, 1500, true);
   initBannerVideoSize(videoIntro, 1080, 1920, false);
+  initBannerVideoSize(videoGame, 1080, 1920, false);
 
   window.onresize = function(event) {
     var x = getWindowWidth(),
@@ -44,6 +47,7 @@ function start() {
      scaleVideoContainer(x, y);
      scaleBannerVideoSize(videoAcceuil, true);
      scaleBannerVideoSize(videoIntro, false);
+     scaleBannerVideoSize(videoGame, false);
   };
 }
 
@@ -82,6 +86,8 @@ function fade(element) {
      var unitHeight = parseInt(height) + 'px';
      divHeroModule.style.width = unitWidth;
      divHeroModule.style.height = unitHeight;
+     videoContainer.style.width = unitWidth;
+     videoContainer.style.height = unitHeight;
  }
 
 function initBannerVideoSize(element, height, width, marginSide) {
