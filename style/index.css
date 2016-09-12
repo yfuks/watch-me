@@ -119,16 +119,14 @@ body {
   -ms-filter: blur(5px);
 }
 
-.game {
-	position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 150px;
+.icons {
+	margin-top: 30px;
+  margin-left: 5px;
+  margin-right: 5px
 }
 
-.icons {
-	margin-top: 40px;
+.icons:hover, .more-icon:hover {
+  cursor: pointer;
 }
 
 .icons-list {
@@ -136,4 +134,14 @@ body {
   opacity: 0.8;
   overflow-y: auto;
   height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+}
+
+.more-icon {
+  color: white;
+  font-size: 50px;
 }
