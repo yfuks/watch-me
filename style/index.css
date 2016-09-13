@@ -9,7 +9,7 @@ body {
   position: relative;
 }
 
-.video-container {
+.video-container, .video-container2 {
   position: relative;
   bottom: 0%;
   left: 0%;
@@ -19,7 +19,7 @@ body {
   background: #000;
 }
 
-.video-container video {
+.video-container video,  .video-container2 video{
   position: absolute;
   z-index: 0;
   bottom: 0;
@@ -136,7 +136,7 @@ body {
 .icons-list {
   text-align: center;
   background-color: rgba(0,0,0,0.8);
-  overflow-y: auto;
+  overflow-y: scroll;
   height: 100%;
   position: absolute;
   top: 0;
