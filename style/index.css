@@ -94,7 +94,7 @@ body {
   height: 36px;
 }
 
-.game-infos .button-start, .game-infos .button-reload, .button-skip{
+.game-infos .button-start, .game-infos .button-reload, .button-skip, .game .button-reload{
   border: 1px solid #EEE;
   width: 130px;
   height: 40px;
@@ -112,9 +112,17 @@ body {
   -o-filter: blur(0);
   -ms-filter: blur(0);
   -ms-filter: blur(0px);
+  color: white;
 }
 
-.game-infos .button-start:hover,  .game-infos .button-reload:hover, .button-skip:hover{
+.game .button-reload {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 45vh;
+  font-family: sans-serif;
+}
+
+.game-infos .button-start:hover, .game-infos .button-reload:hover, .button-skip:hover, .game .button-reload:hover{
   cursor: pointer;
   filter: blur(5px);
   -webkit-filter: blur(5px);

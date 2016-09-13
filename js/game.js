@@ -4,6 +4,7 @@ var spinner = document.getElementsByClassName("spinner")[0];
 var videoContainer = document.getElementsByClassName("video-container2")[0];
 var credits = document.getElementsByClassName("credits")[0];
 var iconsList = document.getElementsByClassName("icons-list")[0];
+var buttonReloadGame = document.getElementsByClassName("button-reload")[1];
 
 var currentIconIndex = 0;
 var currentVideoTime = 0;
@@ -66,6 +67,9 @@ function fadeSpinner(element) {
 
             if (inCredit)
               return;
+
+            iconsList.style.display = 'block';
+
             // work around safari (force redraw)
             videoContainer.style.display = 'block';
             videoContainer.offsetHeight;
@@ -73,6 +77,12 @@ function fadeSpinner(element) {
 
             video.style.display = "block";
             video.play();
+            video.onended = function (e) {
+              buttonReloadGame.style.display = 'block';
+              video.style.display = 'none';
+              videoContainer.style.display = 'none';
+              iconsList.style.display = 'none';
+            }
         }
         element.style.opacity = op;
         element.style.filter = 'alpha(opacity=' + op * 100 + ")";
