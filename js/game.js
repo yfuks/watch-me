@@ -109,12 +109,14 @@ function changeCurrentVideo(index) {
   spinner.style.display = "block";
 
   video.src = getSrcVideoFromIndex(index);
-  video.currentTime = currentVideoTime;
   video.load();
 
-  video.oncanplaythrough = function (event) {
-    fadeSpinner(spinner);
-  }
+  video.onloadedmetadata = function() {
+    video.currentTime = currentVideoTime;
+    video.oncanplaythrough = function (event) {
+      fadeSpinner(spinner);
+    }
+  };
 }
 
 function getSrcVideoFromIndex(index) {
