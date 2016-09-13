@@ -2,10 +2,13 @@ var icons = document.getElementsByClassName("icons");
 var video = document.getElementsByClassName("fillWidth3")[0];
 var spinner = document.getElementsByClassName("spinner")[0];
 var videoContainer = document.getElementsByClassName("video-container2")[0];
+var credits = document.getElementsByClassName("credits")[0];
+var iconsList = document.getElementsByClassName("icons-list")[0];
 
 var currentIconIndex = 0;
 var currentVideoTime = 0;
 var gameStarted = false;
+var inCredit = false;
 
 document.onkeypress = function (e) {
   var charCode = (typeof e.which == "number") ? e.which : e.keyCode;
@@ -15,6 +18,8 @@ document.onkeypress = function (e) {
 }
 
 function selectIconRandomnly() {
+  if (inCredit)
+    return;
   var index;
   while (currentIconIndex == (index = Math.floor((Math.random() * icons.length)))) {
     ;
@@ -32,9 +37,23 @@ function startGame() {
   video.load();
 
   video.oncanplaythrough = function (event) {
+    if (inCredit)
+      return;
+
     fadeSpinner(spinner);
     gameStarted = true;
   }
+}
+
+
+function showCredits() {
+  inCredit = true;
+  spinner.style.display = 'none';
+  iconsList.style.display = 'none';
+  videoContainer.style.display = 'none';
+  video.style.display = 'none';
+  video.pause();
+  credits.style.display = 'block';
 }
 
 function fadeSpinner(element) {
@@ -45,6 +64,8 @@ function fadeSpinner(element) {
             timer = null;
             element.style.display = 'none';
 
+            if (inCredit)
+              return;
             // work around safari (force redraw)
             videoContainer.style.display = 'block';
             videoContainer.offsetHeight;
