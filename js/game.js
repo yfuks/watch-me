@@ -5,6 +5,23 @@ var videoContainer = document.getElementsByClassName("video-container2")[0];
 
 var currentIconIndex = 0;
 var currentVideoTime = 0;
+var gameStarted = false;
+
+document.onkeypress = function (e) {
+  var charCode = (typeof e.which == "number") ? e.which : e.keyCode;
+  if (charCode == 114 && gameStarted) {
+    selectIconRandomnly();
+  }
+}
+
+function selectIconRandomnly() {
+  var index;
+  while (currentIconIndex == (index = Math.floor((Math.random() * icons.length)))) {
+    ;
+  }
+  changeCurrentIcon(index);
+  changeCurrentVideo('' + index);
+}
 
 function startGame() {
   var source = document.createElement('source');
@@ -16,6 +33,7 @@ function startGame() {
 
   video.oncanplaythrough = function (event) {
     fadeSpinner(spinner);
+    gameStarted = true;
   }
 }
 
