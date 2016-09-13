@@ -1,7 +1,7 @@
 # WATCH-ME
 https://yfuks.github.io (in progress)
 
-Pierre A., acteur principal, décède brutalement sur un tourna
+Pierre A., acteur principal, décède brutalement sur un tournage
 
 Selon le médecin, l’empoisonnement en est la cause.
 
