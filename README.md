@@ -15,17 +15,10 @@ Accident ? Meurtre ? Comment est-ce arrivé ?
 
 @todo :
 
-- [x] Changement de police : Roboto (regular).
-Taille de texte : Pas trop gros dans la page. On verra les détails ensemble.
-
 - [ ] Faire un logo-texte « j’ai trouvé » en Roboto thin
 
 - [ ] La bannière de "j'ai trouvé", sur fond noir opacité 60% aussi.
 Les photos dans les rectangles pour l'instant, et peut être à recardé en carré. Si possible effet de dégradé noir sur les photos pour plus de souplesse, dans le visuel. Que la photo intègre la bannière.
-
-- [x] Arrivée du logo Watch en Fondu
-
-- [x] Tous les boutons en encadrés, même épaisseur (à augmenter légèrement), même hauteur, même largeur avec la typo Roboto
 
 - [ ] Ajouter un filtre noir sur la vidéo opacifié à environ 50%
 
