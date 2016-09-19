@@ -18,6 +18,22 @@ document.onkeypress = function (e) {
   }
 }
 
+buttonReloadGame.onclick = function(e) {
+  currentIconIndex = 0;
+  currentVideoTime = 0;
+  gameStarted = false;
+  inCredit = false;
+  video.currentTime = 0;
+
+  changeCurrentIcon(0);
+
+  buttonReloadGame.style.display = 'none';
+  iconsList.style.display = 'block';
+  spinner.style.display = 'block';
+
+  changeCurrentVideo('0');
+}
+
 function selectIconRandomnly() {
   if (inCredit)
     return;
