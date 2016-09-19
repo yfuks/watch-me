@@ -163,7 +163,7 @@ body {
 .icons {
 	margin-top: 30px;
   margin-left: 5px;
-  margin-right: 5px
+  margin-right: 5px;
 }
 
 .icons:hover, .more-icon:hover {
@@ -185,6 +185,14 @@ body {
 .more-icon {
   color: white;
   font-size: 50px;
+}
+
+#icon-1 {
+  margin-top: 100px;
+}
+
+#icon-9 {
+  margin-bottom: 100px;
 }
 
 .credits {
@@ -221,6 +229,23 @@ body {
 
 .author {
   margin-top: 30px;
+}
+
+@media screen and (max-height: 1150px) {
+  #icon-1 {margin-top: 30px;}
+  #icon-9 {margin-bottom: 0px;}
+}
+
+@media screen and (max-height: 965px) {
+  .icons {margin-top: 20px;}
+}
+
+@media screen and (max-height: 875px) {
+  .icons {margin-top: 10px;}
+}
+
+@media screen and (max-height: 785px) {
+  .icons {margin-top: 5px;}
 }
 
 @-webkit-keyframes animatetop {
