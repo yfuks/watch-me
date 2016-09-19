@@ -173,7 +173,7 @@ body {
 .icons-list {
   text-align: center;
   background-color: rgba(0,0,0,0.8);
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 100%;
   position: absolute;
   top: 0;
