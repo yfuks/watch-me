@@ -16,8 +16,10 @@ window.mobileAndTabletcheck = function() {
   return check;
 };
 
-if (window.mobileAndTabletcheck()) {
-  disclaimer.style.display = "block";
+window.onload = function() {
+  if (window.mobileAndTabletcheck()) {
+    disclaimerDevices.style.display = "block";
+  }
 }
 
 videoAcceuil.oncanplaythrough = function (e) {
