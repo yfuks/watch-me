@@ -6,6 +6,16 @@ body {
   margin: 0px;
 }
 
+.disclaimer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 250px;
+  color: white;
+  font-family: Roboto;
+}
+
 .homepage-hero-module {
   border-right: none;
   border-left: none;
