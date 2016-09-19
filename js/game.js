@@ -31,6 +31,7 @@ buttonReloadGame.onclick = function(e) {
   iconsList.style.display = 'block';
   spinner.style.display = 'block';
 
+  gameStarted = true;
   changeCurrentVideo('0');
 }
 
