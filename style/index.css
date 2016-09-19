@@ -12,8 +12,16 @@ body {
   left: 0;
   right: 0;
   height: 250px;
-  color: white;
+  line-height: 250px;
   font-family: Roboto;
+  text-align: center;
+  font-size: 60px;
+  background-color: #EEE;
+  margin: 5px;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 2s;
+  animation-name: animatetop;
+  animation-duration: 2s;
 }
 
 .homepage-hero-module {
