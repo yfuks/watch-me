@@ -5,6 +5,8 @@ var videoContainer = document.getElementsByClassName("video-container2")[0];
 var credits = document.getElementsByClassName("credits")[0];
 var iconsList = document.getElementsByClassName("icons-list")[0];
 var buttonReloadGame = document.getElementsByClassName("button-reload")[1];
+var buttonFound = document.getElementsByClassName("button-found")[0];
+var bannerFound = document.getElementsByClassName("banner-found")[0];
 
 var currentIconIndex = 0;
 var currentVideoTime = 0;
@@ -30,9 +32,20 @@ buttonReloadGame.onclick = function(e) {
   buttonReloadGame.style.display = 'none';
   iconsList.style.display = 'block';
   spinner.style.display = 'block';
+  buttonFound.style.display = 'block';
 
   gameStarted = true;
   changeCurrentVideo('0');
+}
+
+buttonFound.onclick = function (e) {
+  video.pause();
+  bannerFound.style.display = 'block';
+  bannerFound.onclick = function (e) {
+    bannerFound.style.display = 'none';
+    bannerFound.onclick = null;
+    video.play();
+  }
 }
 
 function selectIconRandomnly() {
@@ -68,6 +81,7 @@ function showCredits() {
   inCredit = true;
   spinner.style.display = 'none';
   iconsList.style.display = 'none';
+  buttonFound.style.display = 'none';
   videoContainer.style.display = 'none';
   video.style.display = 'none';
   video.pause();
@@ -96,6 +110,7 @@ function fadeSpinner(element) {
             video.play();
             video.onended = function (e) {
               buttonReloadGame.style.display = 'block';
+              buttonFound.style.display = 'none';
               video.style.display = 'none';
               videoContainer.style.display = 'none';
               iconsList.style.display = 'none';

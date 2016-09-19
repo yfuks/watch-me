@@ -15,11 +15,11 @@ Accident ? Meurtre ? Comment est-ce arrivé ?
 
 @todo :
 
-- [ ] Faire un logo-texte « j’ai trouvé » en Roboto thin
+- [x] Faire un logo-texte « j’ai trouvé » en Roboto thin
 
-- [ ] La bannière de "j'ai trouvé", sur fond noir opacité 60% aussi.
+- [x] La bannière de "j'ai trouvé", sur fond noir opacité 60% aussi.
 Les photos dans les rectangles pour l'instant, et peut être à recardé en carré. Si possible effet de dégradé noir sur les photos pour plus de souplesse, dans le visuel. Que la photo intègre la bannière.
 
-- [ ] Ajouter un filtre noir sur la vidéo opacifié à environ 50%
+- [x] Ajouter un filtre noir sur la vidéo opacifié à environ 50%
 
 - [ ] Apparition du texte dans cet ordre: les 4 phrases les unes à la suite des autres. Fondu à leur apparition et disparition, en rythme avec la musique (style bande annonce). Texte centré dans la page, avec la bonne typo, pas trop grande.
