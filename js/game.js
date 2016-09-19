@@ -142,7 +142,7 @@ function getSrcVideoFromIndex(index) {
       srcVideo = './videos/volet-last.mp4';
       break;
     case '3':
-      srcVideo = './videos/fanny-last.mp4';
+      srcVideo = 'http://3.sendvid.com/nmvekyyj.mp4';
       break;
     case '4':
       srcVideo = './videos/camera-last.mp4';
@@ -154,10 +154,10 @@ function getSrcVideoFromIndex(index) {
       srcVideo = './videos/montre-last.mp4';
       break;
     case '7':
-      srcVideo = './videos/comtoise-last.mp4';
+      srcVideo = 'http://3.sendvid.com/s52vg5ig.mp4';
       break;
     case '8':
-      srcVideo = './videos/tour-last.mp4';
+      srcVideo = 'http://4.sendvid.com/1y8ny0ov.mp4';
       break;
     case '9':
       srcVideo = './videos/poignee-last.mp4';
