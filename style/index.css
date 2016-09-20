@@ -201,10 +201,45 @@ body {
 
 #icon-1 {
   margin-top: 100px;
+  width: 64px;
+  height: 25px;
 }
-
+#icon-2 {
+  width: 33px;
+  height: 52px;
+}
+#icon-3 {
+  width: 49px;
+  height: 63px;
+}
+#icon-4 {
+  width: 62px;
+  height: 29px;
+}
+#icon-5 {
+  width: 62px;
+  height: 52px;
+}
+#icon-6 {
+  width: 62px;
+  height: 50px;
+}
+#icon-7 {
+  width: 51px;
+  height: 85px;
+}
+#icon-8 {
+  width: 41px;
+  height: 84px;
+}
 #icon-9 {
+  width: 44px;
+  height: 70px;
+}
+#icon-10 {
   margin-bottom: 100px;
+  width: 55px;
+  height: 55px;
 }
 
 .credits {
@@ -285,20 +320,38 @@ body {
 }
 
 @media screen and (max-height: 1150px) {
-  #icon-1 {margin-top: 30px;}
-  #icon-9 {margin-bottom: 0px;}
+  #icon-1 {width: 54px; height: 20px;}
+  #icon-2 {width: 28px; height: 39px;}
+  #icon-3 {width: 37px; height: 53px;}
+  #icon-4 {width: 48px; height: 27px;}
+  #icon-5 {width: 50px; height: 40px;}
+  #icon-6 {width: 50px; height: 40px;}
+  #icon-7 {width: 41px; height: 65px;}
+  #icon-8 {width: 36px; height: 65px;}
+  #icon-9 {width: 34px; height: 52px;}
+  #icon-10 {width: 42px; height: 45px;}
+  .icons {margin-left: 10px; margin-right: 10px;}
+}
+
+@media screen and (max-height: 1015px) {
+  #icon-10 {margin-bottom: 50px;}
 }
 
 @media screen and (max-height: 965px) {
+  #icon-1 {margin-top: 50px;}
+  #icon-10 {margin-bottom: 20px;}
+}
+
+@media screen and (max-height: 890px) {
+  #icon-1 {margin-top: 20px;}
+  #icon-10 {margin-bottom: 10px;}
+  /*.icons {margin-top: 10px;}*/
+}
+
+@media screen and (max-height: 845px) {
+  #icon-1 {margin-top: 10px;}
+  #icon-10 {margin-bottom: 10px;}
   .icons {margin-top: 20px;}
-}
-
-@media screen and (max-height: 875px) {
-  .icons {margin-top: 10px;}
-}
-
-@media screen and (max-height: 785px) {
-  .icons {margin-top: 5px;}
 }
 
 @-webkit-keyframes animatetop {
