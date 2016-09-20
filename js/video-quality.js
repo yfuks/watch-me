@@ -15,6 +15,10 @@ function checkBuffering() {
 
   inCheck = true;
   var currentBufferIndex = getCurrentBufferIndex();
+  if (currentBufferIndex == -1) {
+    inCheck = false;
+    return;
+  }
   currentVideoSrc = video.src;
   var tmout = setTimeout(function() {
     inCheck = false;
@@ -25,9 +29,10 @@ function checkBuffering() {
     }
 
     var timeBuffered = video.seekable.end(currentBufferIndex) - video.seekable.start(currentBufferIndex);
-    if (timeBuffered < 2) {
+    console.log(timeBuffered);
+    if (timeBuffered <= 2) {
       downgradeVideoQuality();
-    } else if (timeBuffered > 4) {
+    } else if (timeBuffered >= 5) {
       upgradeVideoQuality();
     }
     clearTimeout(tmout);
@@ -35,6 +40,8 @@ function checkBuffering() {
 }
 
 function upgradeVideoQuality() {
+  if (currentVideoQuality == 'high')
+    return;
   console.log('upgrade quality');
 }
 
