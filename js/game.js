@@ -27,15 +27,13 @@ buttonReloadGame.onclick = function(e) {
   inCredit = false;
   video.currentTime = 0;
 
-  changeCurrentIcon(0);
-
   buttonReloadGame.style.display = 'none';
   iconsList.style.display = 'block';
   spinner.style.display = 'block';
   buttonFound.style.display = 'block';
 
   gameStarted = true;
-  changeCurrentVideo('0');
+  changeCurrentVideo('' + currentIconIndex);
 }
 
 buttonFound.onclick = function (e) {
