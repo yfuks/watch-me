@@ -200,46 +200,49 @@ function getSrcVideoFromIndex(index) {
   switch (index) {
     case '0':
     // miroir
-      srcVideo = './videos/miroir-last.mp4';
+      srcVideo = './videos/miroir-last-480p.mp4';
       break;
     case '1':
     // ampoule
-      srcVideo = './videos/ampoule-last.mp4';
+      srcVideo = './videos/ampoule-last-480p.mp4';
       break;
     case '2':
     // fanny
-      srcVideo = 'http://3.sendvid.com/nmvekyyj.mp4';
+      //srcVideo = 'http://3.sendvid.com/nmvekyyj.mp4';
+      srcVideo = './videos/fanny-last-480p.mp4';
       break;
     case '3':
     // volet
-      srcVideo = './videos/volet-last.mp4';
+      srcVideo = './videos/volet-last-480p.mp4';
       break;
     case '4':
     // camera
-      srcVideo = './videos/camera-last.mp4';
+      srcVideo = './videos/camera-last-480p.mp4';
       break;
     case '5':
     // ordi
-      srcVideo = './videos/ordi-last.mp4';
+      srcVideo = './videos/ordi-last-480p.mp4';
       break;
     case '6':
     // montre
-      srcVideo = './videos/montre-last.mp4';
+      srcVideo = './videos/montre-last-480p.mp4';
       break;
     case '7':
     // comtoise
-      srcVideo = 'http://3.sendvid.com/s52vg5ig.mp4';
+      //srcVideo = 'http://3.sendvid.com/s52vg5ig.mp4';
+      srcVideo = './videos/comtoise-last-480p.mp4';
       break;
     case '8':
     // tour
-      srcVideo = 'http://4.sendvid.com/1y8ny0ov.mp4';
+      //srcVideo = 'http://4.sendvid.com/1y8ny0ov.mp4';
+      srcVideo = './videos/tour-last-480p.mp4';
       break;
     case '9':
     // poignee
-      srcVideo = './videos/poignee-last.mp4';
+      srcVideo = './videos/poignee-last-480p.mp4';
       break;
     default:
-      srcVideo = './videos/miroir-last.mp4';
+      srcVideo = './videos/miroir-last-480p.mp4';
   }
   return srcVideo;
 }
