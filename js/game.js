@@ -91,12 +91,12 @@ function startGame() {
     var currentBufferIndex = getCurrentBufferIndex();
     var videoCurrentBufferTime = video.buffered.end(currentBufferIndex) - video.buffered.start(currentBufferIndex);
     console.log(videoCurrentBufferTime);
-    if (videoCurrentBufferTime >= 5)
+    if (videoCurrentBufferTime >= 10)
       upgradeVideoQuality();
-    else if (videoCurrentBufferTime <= 1)
+    else if (videoCurrentBufferTime <= 2)
       downgradeVideoQuality();
     clearInterval(interCheck);
-  }, 1000);
+  }, 1500);
 
   video.oncanplaythrough = function (event) {
     video.canplaythrough = true;
@@ -121,37 +121,27 @@ function showCredits() {
 }
 
 function fadeSpinner(element) {
-    var op = 1;  // initial opacity
-    var timer = setInterval(function () {
-        if (op <= 0.1){
-            clearInterval(timer);
-            timer = null;
-            element.style.display = 'none';
+  element.style.display = 'none';
 
-            if (inCredit)
-              return;
+  if (inCredit)
+    return;
 
-            iconsList.style.display = 'block';
+  iconsList.style.display = 'block';
 
-            // work around safari (force redraw)
-            videoContainer.style.display = 'block';
-            videoContainer.offsetHeight;
-            videoContainer.style.display = '';
+  // work around safari (force redraw)
+  videoContainer.style.display = 'block';
+  videoContainer.offsetHeight;
+  videoContainer.style.display = '';
 
-            video.style.display = "block";
-            video.play();
-            video.onended = function (e) {
-              buttonReloadGame.style.display = 'block';
-              buttonFound.style.display = 'none';
-              video.style.display = 'none';
-              videoContainer.style.display = 'none';
-              iconsList.style.display = 'none';
-            }
-        }
-        element.style.opacity = op;
-        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-        op -= op * 0.1;
-    }, 70);
+  video.style.display = "block";
+  video.play();
+  video.onended = function (e) {
+    buttonReloadGame.style.display = 'block';
+    buttonFound.style.display = 'none';
+    video.style.display = 'none';
+    videoContainer.style.display = 'none';
+    iconsList.style.display = 'none';
+  }
 }
 
 
@@ -191,12 +181,12 @@ function changeCurrentVideo(index) {
       var currentBufferIndex = getCurrentBufferIndex();
       var videoCurrentBufferTime = video.buffered.end(currentBufferIndex) - video.buffered.start(currentBufferIndex);
       console.log(videoCurrentBufferTime);
-      if (videoCurrentBufferTime >= 5)
+      if (videoCurrentBufferTime >= 10)
         upgradeVideoQuality();
-      else if (videoCurrentBufferTime <= 1)
+      else if (videoCurrentBufferTime <= 2)
         downgradeVideoQuality();
       clearInterval(interCheck);
-    }, 1000);
+    }, 1500);
     video.currentTime = currentVideoTime;
     video.oncanplaythrough = function (event) {
       video.canplaythrough = true;

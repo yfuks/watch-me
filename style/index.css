@@ -40,6 +40,13 @@ body {
   background: #000;
 }
 
+.video-container2 {
+  -webkit-animation-name: animateopacity;
+  -webkit-animation-duration: 1s;
+  animation-name: animateopacity;
+  animation-duration: 1s;
+}
+
 .video-container video,  .video-container2 video{
   position: absolute;
   z-index: 0;
