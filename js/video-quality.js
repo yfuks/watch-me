@@ -9,7 +9,7 @@ var inCheck = false;
 setInterval(checkBuffering, intervalChecker);
 
 function checkBuffering() {
-  if (video.paused || !gameStarted || inCheck) {
+  if (!gameStarted || inCheck || inCredit) {
     return;
   }
 

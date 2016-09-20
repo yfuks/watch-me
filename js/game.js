@@ -22,7 +22,6 @@ document.onkeypress = function (e) {
 }
 
 buttonReloadGame.onclick = function(e) {
-  currentIconIndex = 0;
   currentVideoTime = 0;
   gameStarted = false;
   inCredit = false;
