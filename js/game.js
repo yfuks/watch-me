@@ -6,6 +6,7 @@ var credits = document.getElementsByClassName("credits")[0];
 var iconsList = document.getElementsByClassName("icons-list")[0];
 var buttonReloadGame = document.getElementsByClassName("button-reload")[1];
 var buttonFound = document.getElementsByClassName("button-found")[0];
+var buttonReturn = document.getElementsByClassName("button-return")[0];
 var bannerFound = document.getElementsByClassName("banner-found")[0];
 
 var currentIconIndex = 0;
@@ -48,6 +49,25 @@ buttonFound.onclick = function (e) {
   }
 }
 
+buttonReturn.onclick = function (e) {
+  inCredit = false;
+  spinner.style.opacity = 1;
+  spinner.style.display = 'block';
+
+  iconsList.style.display = 'block';
+  buttonFound.style.display = 'block';
+  credits.style.display = 'none';
+
+  if (video.canplaythrough) {
+    fadeSpinner(spinner);
+    gameStarted = true;
+  }
+  video.oncanplaythrough = function (event) {
+    fadeSpinner(spinner);
+    gameStarted = true;
+  }
+}
+
 function selectIconRandomnly() {
   if (inCredit)
     return;
@@ -68,6 +88,7 @@ function startGame() {
   video.load();
 
   video.oncanplaythrough = function (event) {
+    video.canplaythrough = true;
     if (inCredit)
       return;
 
@@ -152,10 +173,12 @@ function changeCurrentVideo(index) {
 
   video.src = getSrcVideoFromIndex(index);
   video.load();
+  video.canplaythrough = false;
 
   video.onloadedmetadata = function() {
     video.currentTime = currentVideoTime;
     video.oncanplaythrough = function (event) {
+      video.canplaythrough = true;;
       fadeSpinner(spinner);
     }
   };
