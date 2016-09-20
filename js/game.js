@@ -78,7 +78,7 @@ function selectIconRandomnly() {
 
 function startGame() {
   var source = document.createElement('source');
-  source.setAttribute('src', './videos/miroir-last.mp4');
+  source.setAttribute('src', './videos/miroir-last-480p.mp4');
   source.class = "video-source";
 
   video.appendChild(source);
