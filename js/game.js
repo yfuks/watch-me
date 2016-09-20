@@ -86,6 +86,18 @@ function startGame() {
   video.appendChild(source);
   video.load();
 
+  var interCheck = setInterval(function () {
+    var currentBufferIndex = getCurrentBufferIndex();
+    var currentBufferIndex = getCurrentBufferIndex();
+    var videoCurrentBufferTime = video.buffered.end(currentBufferIndex) - video.buffered.start(currentBufferIndex);
+    console.log(videoCurrentBufferTime);
+    if (videoCurrentBufferTime >= 5)
+      upgradeVideoQuality();
+    else if (videoCurrentBufferTime <= 1)
+      downgradeVideoQuality();
+    clearInterval(interCheck);
+  }, 1000);
+
   video.oncanplaythrough = function (event) {
     video.canplaythrough = true;
     if (inCredit)
@@ -175,6 +187,16 @@ function changeCurrentVideo(index) {
   video.canplaythrough = false;
 
   video.onloadedmetadata = function() {
+    var interCheck = setInterval(function () {
+      var currentBufferIndex = getCurrentBufferIndex();
+      var videoCurrentBufferTime = video.buffered.end(currentBufferIndex) - video.buffered.start(currentBufferIndex);
+      console.log(videoCurrentBufferTime);
+      if (videoCurrentBufferTime >= 5)
+        upgradeVideoQuality();
+      else if (videoCurrentBufferTime <= 1)
+        downgradeVideoQuality();
+      clearInterval(interCheck);
+    }, 1000);
     video.currentTime = currentVideoTime;
     video.oncanplaythrough = function (event) {
       video.canplaythrough = true;
