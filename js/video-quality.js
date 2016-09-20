@@ -15,6 +15,7 @@ function checkBuffering() {
 
   inCheck = true;
   var currentBufferIndex = getCurrentBufferIndex();
+  console.log(currentBufferIndex);
   if (currentBufferIndex == -1) {
     inCheck = false;
     return;
