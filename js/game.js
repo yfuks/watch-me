@@ -178,7 +178,7 @@ function changeCurrentVideo(index) {
   video.onloadedmetadata = function() {
     video.currentTime = currentVideoTime;
     video.oncanplaythrough = function (event) {
-      video.canplaythrough = true;;
+      video.canplaythrough = true;
       fadeSpinner(spinner);
     }
   };
@@ -196,12 +196,12 @@ function getSrcVideoFromIndex(index) {
       srcVideo = './videos/ampoule-last.mp4';
       break;
     case '2':
-    // volet
-      srcVideo = './videos/volet-last.mp4';
-      break;
-    case '3':
     // fanny
       srcVideo = 'http://3.sendvid.com/nmvekyyj.mp4';
+      break;
+    case '3':
+    // volet
+      srcVideo = './videos/volet-last.mp4';
       break;
     case '4':
     // camera
