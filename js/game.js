@@ -59,7 +59,7 @@ buttonReturn.onclick = function (e) {
     fadeSpinner(spinner);
     gameStarted = true;
   }
-  video.oncanplaythrough = function (event) {
+  video.oncanplay = function (event) {
     fadeSpinner(spinner);
     gameStarted = true;
   }
@@ -96,7 +96,7 @@ function startGame() {
     clearInterval(interCheck);
   }, 1500);
 
-  video.oncanplaythrough = function (event) {
+  video.oncanplay = function (event) {
     video.canplaythrough = true;
     if (inCredit)
       return;
@@ -186,7 +186,7 @@ function changeCurrentVideo(index) {
       clearInterval(interCheck);
     }, 1500);
     video.currentTime = currentVideoTime;
-    video.oncanplaythrough = function (event) {
+    video.oncanplay = function (event) {
       video.canplaythrough = true;
       fadeSpinner(spinner);
     }
