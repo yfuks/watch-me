@@ -180,6 +180,10 @@ function changeCurrentVideo(index) {
   video.onloadedmetadata = function() {
     var interCheck = setInterval(function () {
       var currentBufferIndex = getCurrentBufferIndex();
+      if (currentBufferIndex == -1) {
+        console.log("video not buffered");
+        return;
+      }
       var videoCurrentBufferTime = video.buffered.end(currentBufferIndex) - video.buffered.start(currentBufferIndex);
       console.log(videoCurrentBufferTime);
       if (videoCurrentBufferTime >= 10)
