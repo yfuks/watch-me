@@ -59,7 +59,7 @@ buttonReturn.onclick = function (e) {
     fadeSpinner(spinner);
     gameStarted = true;
   }
-  video.oncanplay = function (event) {
+  video.oncanplaythrough = function (event) {
     fadeSpinner(spinner);
     gameStarted = true;
   }
@@ -78,7 +78,7 @@ function selectIconRandomnly() {
 
 function startGame() {
   var source = document.createElement('source');
-  source.setAttribute('src', './videos/miroir-last-480p.mp4');
+  source.setAttribute('src', './videos/miroir-last.mp4');
   source.class = "video-source";
 
   video.appendChild(source);
@@ -86,7 +86,10 @@ function startGame() {
 
   var interCheck = setInterval(function () {
     var currentBufferIndex = getCurrentBufferIndex();
-    var currentBufferIndex = getCurrentBufferIndex();
+    if (currentBufferIndex == -1) {
+      console.log("video not buffered");
+      return;
+    }
     var videoCurrentBufferTime = video.buffered.end(currentBufferIndex) - video.buffered.start(currentBufferIndex);
     console.log(videoCurrentBufferTime);
     if (videoCurrentBufferTime >= 10)
@@ -96,7 +99,7 @@ function startGame() {
     clearInterval(interCheck);
   }, 1500);
 
-  video.oncanplay = function (event) {
+  video.oncanplaythrough = function (event) {
     video.canplaythrough = true;
     if (inCredit)
       return;
@@ -186,7 +189,7 @@ function changeCurrentVideo(index) {
       clearInterval(interCheck);
     }, 1500);
     video.currentTime = currentVideoTime;
-    video.oncanplay = function (event) {
+    video.oncanplaythrough = function (event) {
       video.canplaythrough = true;
       fadeSpinner(spinner);
     }
