@@ -78,26 +78,11 @@ function selectIconRandomnly() {
 
 function startGame() {
   var source = document.createElement('source');
-  source.setAttribute('src', './videos/miroir-last.mp4');
+  source.setAttribute('src', './videos/fanny-last-480p.mp4');
   source.class = "video-source";
 
   video.appendChild(source);
   video.load();
-
-  var interCheck = setInterval(function () {
-    var currentBufferIndex = getCurrentBufferIndex();
-    if (currentBufferIndex == -1) {
-      console.log("video not buffered");
-      return;
-    }
-    var videoCurrentBufferTime = video.buffered.end(currentBufferIndex) - video.buffered.start(currentBufferIndex);
-    console.log(videoCurrentBufferTime);
-    if (videoCurrentBufferTime >= 10)
-      upgradeVideoQuality();
-    else if (videoCurrentBufferTime <= 2)
-      downgradeVideoQuality();
-    clearInterval(interCheck);
-  }, 1500);
 
   video.oncanplaythrough = function (event) {
     video.canplaythrough = true;
@@ -178,20 +163,6 @@ function changeCurrentVideo(index) {
   video.canplaythrough = false;
 
   video.onloadedmetadata = function() {
-    var interCheck = setInterval(function () {
-      var currentBufferIndex = getCurrentBufferIndex();
-      if (currentBufferIndex == -1) {
-        console.log("video not buffered");
-        return;
-      }
-      var videoCurrentBufferTime = video.buffered.end(currentBufferIndex) - video.buffered.start(currentBufferIndex);
-      console.log(videoCurrentBufferTime);
-      if (videoCurrentBufferTime >= 10)
-        upgradeVideoQuality();
-      else if (videoCurrentBufferTime <= 2)
-        downgradeVideoQuality();
-      clearInterval(interCheck);
-    }, 1500);
     video.currentTime = currentVideoTime;
     video.oncanplaythrough = function (event) {
       video.canplaythrough = true;
@@ -205,7 +176,7 @@ function getSrcVideoFromIndex(index) {
   switch (index) {
     case '0':
     // miroir
-      srcVideo = './videos/miroir-last-480p.mp4';
+      srcVideo = './videos/fanny-last-480p.mp4';
       break;
     case '1':
     // ampoule
@@ -214,7 +185,7 @@ function getSrcVideoFromIndex(index) {
     case '2':
     // fanny
       //srcVideo = 'http://3.sendvid.com/nmvekyyj.mp4';
-      srcVideo = './videos/fanny-last-480p.mp4';
+      srcVideo = './videos/miroir-last-480p.mp4';
       break;
     case '3':
     // volet
