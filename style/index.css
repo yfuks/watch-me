@@ -1,5 +1,6 @@
 @font-face { font-family: Roboto; src: url('../font/Roboto-Regular.ttf'); }
 @font-face { font-family: Roboto-Thin; src: url('../font/Roboto-Thin.ttf'); }
+@font-face { font-family: Genbkbasr; src: url('../font/GenBkBasR.ttf'); }
 
 body {
   background-color: black;
@@ -129,7 +130,9 @@ body {
   height: 40px;
 }
 
-.game-infos .button-start, .game-infos .button-reload, .button-skip, .game .button-reload, .game .button-found, .credits .button-return{
+.game-infos .button-start, .game-infos .button-reload, .button-skip,
+.game .button-reload, .game .button-found, .credits .button-return,
+.button-continue, .button-replay {
   border: 2px solid #EEE;
   width: 130px;
   height: 40px;
@@ -176,7 +179,9 @@ body {
   left: 46px;
 }
 
-.game-infos .button-start:hover, .game-infos .button-reload:hover, .button-skip:hover, .game .button-reload:hover, .game .button-found:hover, .credits .button-return:hover{
+.game-infos .button-start:hover, .game-infos .button-reload:hover,
+.button-skip:hover, .game .button-reload:hover, .game .button-found:hover,
+.credits .button-return:hover, .button-continue:hover, .button-replay:hover {
   cursor: pointer;
   filter: blur(5px);
   -webkit-filter: blur(5px);
@@ -236,6 +241,7 @@ body {
 .label {
   margin-bottom: 25px;
   color: #FFEE00;
+  font-family: Genbkbasr;
 }
 
 .title {
@@ -298,22 +304,34 @@ body {
      cursor: pointer;
 }
 
-@media screen and (max-height: 1015px) {
+#victory, #defeat {
+  color: white;
+  font-family: Roboto-Thin;
+  font-size: 18px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.button-continue, .button-replay {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-height: 1025px) {
   #icon-10 {margin-bottom: 50px;}
 }
 
-@media screen and (max-height: 965px) {
+@media screen and (max-height: 975px) {
   #icon-1 {margin-top: 50px;}
   #icon-10 {margin-bottom: 20px;}
 }
 
-@media screen and (max-height: 890px) {
+@media screen and (max-height: 915px) {
   #icon-1 {margin-top: 20px;}
   #icon-10 {margin-bottom: 10px;}
-  /*.icons {margin-top: 10px;}*/
 }
 
-@media screen and (max-height: 845px) {
+@media screen and (max-height: 855px) {
   #icon-1 {margin-top: 10px;}
   #icon-10 {margin-bottom: 10px;}
   .icons {margin-top: 20px;}

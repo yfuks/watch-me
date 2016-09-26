@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <HTML>
-  <header>
+  <head>
     <link rel="stylesheet" type="text/css" href="style/index.css">
     <link rel="stylesheet" type="text/css" href="style/spinner.css">
+    <link rel="shortcut icon" type="image/png" href="./photos/logoA.png" />
+    <link rel="icon" type="image/png" href="./photos/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./photos/favicon-16x16.png" sizes="16x16" />
     <meta charset="UTF-8">
     <meta name="description" content="Pierre, acteur principal, décède brutalement sur un tournage. Accident? Meurtre? Que s'est-il passé? Dix objets dotés d'un regard sont présents dans la pièce au moment du drame et montrent la scène chacun de son point de vue. l'espace est modifié en fonction de leur façon." />
     <title>WATCH</title>
-  </header>
+  </head>
   <body>
     <div class="spinner">
       <div class="double-bounce1"></div>
@@ -63,11 +66,19 @@
     <div class="button-found">J'ai trouvé</div>
     <div class="banner-found" style="display: none;">
       <div class="list-suspect">
-        <img class="icon-suspect" src="./photos/cedric.jpg"></img>
-        <img class="icon-suspect" src="./photos/chris.jpg"></img>
-        <img class="icon-suspect" src="./photos/ispak.jpg"></img>
-        <img class="icon-suspect" src="./photos/laura.jpg"></img>
-        <img class="icon-suspect" src="./photos/nico.jpg"></img>
+        <img class="icon-suspect" src="./photos/cedric.jpg" onclick="selectSuspect(1)"></img>
+        <img class="icon-suspect" src="./photos/chris.jpg" onclick="selectSuspect(2)"></img>
+        <img class="icon-suspect" src="./photos/ispak.jpg" onclick="selectSuspect(3)"></img>
+        <img class="icon-suspect" src="./photos/laura.jpg" onclick="selectSuspect(4)"></img>
+        <img class="icon-suspect" src="./photos/nico.jpg" onclick="selectSuspect(5)"></img>
+        <div id="victory" style="display: none;">
+          <div>Gagné !</div>
+          <div class="button-continue">CONTINUE &#8594;</div>
+        </div>
+        <div id="defeat" style="display: none;">
+          <div>Perdu !</div>
+          <div class="button-replay">&#8634; RELOAD</div>
+        </div>
       </div>
     </div>
     <div class="credits" style="display: none;">
@@ -108,7 +119,6 @@
     <div class="disclaimer" style="display: none;">Not supported for your device</div>
     <script type="text/javascript" src="js/home.js"></script>
     <script type="text/javascript" src="js/introduction.js"></script>
-    <script type="text/javascript" src="js/video-quality.js"></script>
     <script type="text/javascript" src="js/game.js"></script>
     <style></style>
   </body>

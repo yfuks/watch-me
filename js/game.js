@@ -8,6 +8,12 @@ var buttonReloadGame = document.getElementsByClassName("button-reload")[1];
 var buttonFound = document.getElementsByClassName("button-found")[0];
 var buttonReturn = document.getElementsByClassName("button-return")[0];
 var bannerFound = document.getElementsByClassName("banner-found")[0];
+var listSuspect = document.getElementsByClassName("list-suspect")[0];
+var iconsSuspect = document.getElementsByClassName("icon-suspect");
+var victory = document.getElementById("victory");
+var defeat = document.getElementById("defeat");
+var buttonContinue = document.getElementsByClassName("button-continue")[0];
+var buttonReplay = document.getElementsByClassName("button-replay")[0];
 
 var currentIconIndex = 0;
 var currentVideoTime = 0;
@@ -40,9 +46,11 @@ buttonFound.onclick = function (e) {
   video.pause();
   bannerFound.style.display = 'block';
   bannerFound.onclick = function (e) {
-    bannerFound.style.display = 'none';
-    bannerFound.onclick = null;
-    video.play();
+    if (e.target == bannerFound) {
+      bannerFound.style.display = 'none';
+      bannerFound.onclick = null;
+      video.play();
+    }
   }
 }
 
@@ -62,6 +70,43 @@ buttonReturn.onclick = function (e) {
   video.oncanplaythrough = function (event) {
     fadeSpinner(spinner);
     gameStarted = true;
+  }
+}
+
+buttonContinue.onclick = function () {
+  bannerFound.style.display = 'none';
+  bannerFound.onclick = null;
+  video.play();
+}
+
+buttonReplay.onclick = function () {
+  currentVideoTime = 0;
+  gameStarted = false;
+  inCredit = false;
+  video.currentTime = 0;
+
+  bannerFound.style.display = 'none';
+  for (var i = 0; i < iconsSuspect.length; i++) {
+    iconsSuspect[i].style.display = 'inline-block';
+  }
+  victory.style.display = 'none';
+  defeat.style.display = 'none';
+  spinner.style.display = 'block';
+
+  gameStarted = true;
+  changeCurrentVideo('' + currentIconIndex);
+}
+
+function selectSuspect(index) {
+  for (var i = 0; i < iconsSuspect.length; i++) {
+    iconsSuspect[i].style.display = 'none';
+  }
+  if (index == 2) {
+    victory.style.display = 'block';
+    defeat.style.display = 'none';
+  } else {
+    victory.style.display = 'none';
+    defeat.style.display = 'block';
   }
 }
 
