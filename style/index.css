@@ -7,6 +7,11 @@ body {
   margin: 0px;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
 .disclaimer {
   position: absolute;
   top: 0;
