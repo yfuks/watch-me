@@ -7,12 +7,8 @@ var buttonSkip = document.getElementsByClassName("button-skip")[0];
 var spinner = document.getElementsByClassName("spinner")[0];
 var divHeroModule = document.getElementsByClassName("homepage-hero-module")[0];
 var game = document.getElementsByClassName("game")[0];
-var fade1 = document.getElementById("fade1");
-var fade2 = document.getElementById("fade2");
-var fade3 = document.getElementById("fade3");
 
 var vidEnded = false;
-var infade = false;
 
 videoIntro.onended = function() {
     vidEnded = true;
@@ -47,51 +43,12 @@ buttonStart.onclick = function (e) {
   startGame();
 }
 
-function fadeOutObject(element) {
-  if (infade)
-    return;
-
-  infade = true;
-  var opci = 1;  // initial opacity
-  element.style.opacity = opci;
-  element.style.filter = 'alpha(opacity=' + opci * 100 + ")";
-  var timerFadeout = setInterval(function () {
-      if (opci <= 0.1){
-          clearInterval(timerFadeout);
-          timerFadeout = null;
-          infade = false;
-          element.style.display = 'none';
-      }
-      element.style.opacity = opci;
-      element.style.filter = 'alpha(opacity=' + opci * 100 + ")";
-      opci -= opci * 0.1;
-  }, 20);
-}
-
 function playIntro() {
   videoIntro.style.display = "block";
   videoIntro.currentTime = 0;
   videoIntro.play();
   gameInfos.style.display = "none";
   buttonSkip.style.display = "block";
-
-  var timerText = setInterval(function () {
-    var time = videoIntro.currentTime;
-    if (time > 2 && time < 7) {
-      fade1.style.display = 'block';
-    } else if (time >= 7 && time <= 8) {
-      fadeOutObject(fade1);
-    } else if (time > 9 && time < 14) {
-      fade2.style.display = 'block';
-    } else if (time >= 14 && time <= 15) {
-      fadeOutObject(fade2);
-    } else if (time > 16 && time < 21) {
-      fade3.style.display = 'block';
-    } else if (time >= 21) {
-      fadeOutObject(fade3);
-      timerText = null;
-    }
-  }, 100);
 
   // print game infos at the end of the videoIntro
   var timer = setInterval(function () {
@@ -100,7 +57,6 @@ function playIntro() {
         clearInterval(timer);
         timer = null;
 		    buttonSkip.style.display = "none";
-        fade3.style.display = 'none';
         gameInfos.style.display = "block";
         vidEnded = false; // put to false for reload purpose
       }

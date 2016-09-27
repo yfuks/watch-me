@@ -78,12 +78,11 @@ a {
   color: white;
   font-size: 35px;
   position: absolute;
-  top: 0;
+  top: 45vh;
   bottom: 0;
   left: 0;
   right: 0;
   text-align: center;
-  margin-top: 45vh;
   font-family: Roboto-Thin;
   -webkit-animation-name: animatesize;
   -webkit-animation-duration: 5s;
