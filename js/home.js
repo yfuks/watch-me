@@ -31,6 +31,10 @@ videoAcceuil.oncanplaythrough = function (e) {
   canPlayAcceuil = true;
 }
 
+videoIntro.oncanplay = function (e) {
+  console.log('videoIntro.oncanplay');
+}
+
 videoIntro.oncanplaythrough = function (e) {
   console.log('videoIntro.oncanplaythrough');
   if (canPlayAcceuil == true && !loadingEnd) {
