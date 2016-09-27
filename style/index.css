@@ -76,6 +76,19 @@ a {
 
 .fade {
   color: white;
+  font-size: 38px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin-top: 45vh;
+  font-family: Roboto-Thin;
+  -webkit-animation-name: animatesize;
+  -webkit-animation-duration: 5s;
+  animation-name: animatesize;
+  animation-duration: 5s;
 }
 
 .game-infos {
@@ -364,4 +377,38 @@ a {
 @keyframes animateopacity {
     from {opacity: 0}
     to {opacity: 1}
+}
+
+@-webkit-keyframes animatesize {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    transform: scale(0.8);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes animatesize {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    transform: scale(0.8);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
 }
