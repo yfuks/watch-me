@@ -76,7 +76,7 @@ a {
 
 .fade {
   color: white;
-  font-size: 38px;
+  font-size: 35px;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -388,7 +388,7 @@ a {
     display: block;
     transform: scale(0.8);
   }
-  30% {
+  90% {
     opacity: 1;
   }
   100% {
@@ -405,7 +405,7 @@ a {
     display: block;
     transform: scale(0.8);
   }
-  30% {
+  90% {
     opacity: 1;
   }
   100% {

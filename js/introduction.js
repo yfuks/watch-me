@@ -77,19 +77,18 @@ function playIntro() {
 
   var timerText = setInterval(function () {
     var time = videoIntro.currentTime;
-    if (time > 2 && time < 6) {
+    if (time > 2 && time < 7) {
       fade1.style.display = 'block';
-    } else if (time >= 6 && time <= 7) {
+    } else if (time >= 7 && time <= 8) {
       fadeOutObject(fade1);
-    } else if (time > 8 && time < 13) {
+    } else if (time > 9 && time < 14) {
       fade2.style.display = 'block';
-    } else if (time >= 13 && time <= 14) {
+    } else if (time >= 14 && time <= 15) {
       fadeOutObject(fade2);
-    } else if (time > 15 && time < 19) {
+    } else if (time > 16 && time < 21) {
       fade3.style.display = 'block';
-    } else if (time > 21) {
-      fade3.style.display = 'none';
-      clearInterval(timerText);
+    } else if (time >= 21) {
+      fadeOutObject(fade3);
       timerText = null;
     }
   }, 100);
@@ -99,6 +98,7 @@ function playIntro() {
     var time = videoIntro.currentTime;
       if (vidEnded) {
         clearInterval(timer);
+        timer = null;
 		    buttonSkip.style.display = "none";
         fade3.style.display = 'none';
         gameInfos.style.display = "block";
