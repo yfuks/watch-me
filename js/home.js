@@ -23,7 +23,6 @@ window.onload = function() {
 }
 
 videoAcceuil.oncanplaythrough = function (e) {
-  console.log('videoAcceuil.oncanplaythrough');
   if (canPlayIntro == true && !loadingEnd) {
     start();
 	loadingEnd = true;
@@ -31,12 +30,18 @@ videoAcceuil.oncanplaythrough = function (e) {
   canPlayAcceuil = true;
 }
 
+/* Firefox work around */
 videoIntro.oncanplay = function (e) {
-  console.log('videoIntro.oncanplay');
+  if (navigator.userAgent.indexOf("Firefox") > 0) {
+    if (canPlayAcceuil == true && !loadingEnd) {
+      start();
+  	loadingEnd = true;
+    }
+    canPlayIntro = true;
+  }
 }
 
 videoIntro.oncanplaythrough = function (e) {
-  console.log('videoIntro.oncanplaythrough');
   if (canPlayAcceuil == true && !loadingEnd) {
     start();
 	loadingEnd = true;
