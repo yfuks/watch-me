@@ -74,6 +74,10 @@ a {
   animation-duration: 2s;
 }
 
+.fade {
+  color: white;
+}
+
 .game-infos {
   position: absolute;
   top: 0;

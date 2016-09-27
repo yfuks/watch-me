@@ -54,11 +54,10 @@ function playIntro() {
   var timer = setInterval(function () {
     var time = videoIntro.currentTime;
       if (vidEnded) {
-          clearInterval(timer);
-		  buttonSkip.style.display = "none";
-          gameInfos.style.display = "block";
-		  videoIntro.style.display = "none";
-          vidEnded = false; // put to false for reload purpose
+        clearInterval(timer);
+		    buttonSkip.style.display = "none";
+        gameInfos.style.display = "block";
+        vidEnded = false; // put to false for reload purpose
       }
-  }, 500);
+  }, 100);
 }
